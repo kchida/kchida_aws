@@ -2,10 +2,9 @@
 
 */
 
-
 jQuery(function ($) {
 	
-    // Begin: Logo Container Hover Highlight #################################
+    // Logo Container Hover Highlight #################################
     (function logo_highlight ($) {
         $('#logo-container').hover(
 		    function () {
@@ -16,37 +15,33 @@ jQuery(function ($) {
 		    }
         );
     })($); 
-    // End: Logo Container Hover Highlight ###################################
     
-    // Begin: Main Nav Menu Hover Highlight ##################################
+    // Main Nav Menu Hover Highlight ##################################
     //
-    // Note: Could have easily used jQuery color transition plugin, but decided
-    // to do it my way for learning purposes.
+    // Note: jQuery color transition plugin is much better option!!
     (function menu_highlight ($, window) {
-      // Cache menu button jQuery object.
+        // Cache menu button jQuery object.
     	var $menu = $('#main-nav li');
-      // Settings:
-      //    REFRESH_INTERVAL -- Elapsed time between CSS color updates to button.
-      //    ON_DURATION -- Elapsed time for mouse-over color transitions.
-      //    OFF_DURATION -- Elapsed time for mouse-exit color transitions.
-      //    START_COLOR -- Original unhighlighted menu color per CSS stylesheet. 
-      //    END_COLOR -- Respective highlight colors from left-to-right; rgb string.
-      // Note:
-      //    Duration divided by refresh interval should ideally yield whole number.
+        // Settings:
+        //    REFRESH_INTERVAL -- Elapsed time between CSS color updates to button.
+        //    ON_DURATION -- Elapsed time for mouse-over color transitions.
+        //    OFF_DURATION -- Elapsed time for mouse-exit color transitions.
+        //    START_COLOR -- Original unhighlighted menu color per CSS stylesheet. 
+        //    END_COLOR -- Respective highlight colors from left-to-right; rgb string.
+        // Note:
+        //    Duration divided by refresh interval should ideally yield whole number.
     	var REFRESH_INTERVAL = 25,
     	    ON_DURATION = 200,
     	    OFF_DURATION = 400,
     	    START_COLOR = $menu.css('background-color'),
     	    END_COLOR = ['rgb(255,144,0)','rgb(0,143,210)','rgb(215,0,22)','rgb(245,195,0)','rgb(0,0,0)'];
     	    
-    	// Called by colorFader().
         function rgbParse (color) { 
    	    // Takes a rgb color string and returns an object with rgb int values.
    	    // Param: color -- must be a string 'rgb(xx, xx, xx)'
    	    // Output: parsed -- Ex. {red: 3, green: 4, blue: 33}
-   	    // Note: 'comp' means color component.
    	        var parsed = {red: '', green: '', blue: ''},
-   	            comp_list = ['blue', 'green', 'red'];
+   	            comp_list = ['blue', 'green', 'red'];    // color components
    	            
    	    	for (var i = 0, comp = comp_list.pop(); i < color.length; i++) {
    	    		if ( color[i] === ',' || (i + 1) === color.length) {
@@ -60,7 +55,6 @@ jQuery(function ($) {
    	    	return parsed;
    	    };
    	    
-   	    // Called in "MAIN" section of code.
         function colorFader ($button, target_color, duration) {
     	// Takes a jQuery object and performs color transition.
     	// Params:
@@ -70,22 +64,22 @@ jQuery(function ($) {
     	    var initial = rgbParse($button.css('background-color')),
     	        target = rgbParse(target_color),
     	        refresh_interval = REFRESH_INTERVAL,
-    	      // Color delta for each refresh cycle.
+    	        // Color delta for each refresh cycle.
     	        step = {red: 0, green: 0, blue: 0},
-    	      // Cache for current color value.
+    	        // Cache for current color value.
     	        curval = {red: 0, green: 0, blue: 0},
-    	      // Color component list and temp cache.
+    	         // Color component list and temp cache.
     	        comp_list = ['blue', 'green', 'red'],
     	        comp = '',
-    	      // Index to track number of calls to refresh_color().
+    	        // Index to track number of calls to refresh_color().
     	        refresh_count = 0,
-    	      // Flag to stop color animation if mouseleave event is detected.
+    	        // Flag to stop color animation if mouseleave event is detected.
     	        stop_refresh = false,
     	        is_mouseleave = (target_color === START_COLOR) ? true : false;
     	     
     	    var total_refreshes = Math.floor(duration / refresh_interval);
     	    
-            // Multiply 'step' and 'curval' by 1000 so Math.floor doesn't obliterate precision later.
+            // Multiply 'step' and 'curval' by 1000 so Math.floor doesn't obliterate precision.
             while (comp_list.length) {
                 comp = comp_list.pop();
                 step[comp] = ( (target[comp] - initial[comp]) * 1000 ) / total_refreshes;
@@ -130,7 +124,7 @@ jQuery(function ($) {
             var id = window.setInterval(refresh_color, refresh_interval);
         };      
     	
-    	// "MAIN" section of code.
+    	// MAIN
         $menu.hover(
         	// Mouseenter callback
 		    function () {
@@ -171,7 +165,6 @@ jQuery(function ($) {
 		    }
         );
     })($, window); 
-    // End: Main Nav Menu Hover Highlight ####################################
     
     // Begin: SimpleModal Login/Register Form ################################
 	var logreg_modal = {

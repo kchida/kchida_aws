@@ -67,27 +67,27 @@ except:
   #TODO: Clean up and consider moving to a shared (w/ django) external config file.
   #INFO: rkhunter omitted as it prompts for config info during apt-get install.
 
-ORIGIN_REPO = "https://kchida@bitbucket.org/kchida/kchida_aws.git"
+ORIGIN_CLONE_CMD= "hg clone https://kchida@bitbucket.org/kchida/kchida_aws"
+
 RUBY_GEMS = "sass compass"
 COM_APT_PKGS = "build-essential binutils-doc autoconf flex bison libreadline-dev " + \
     "zlib1g-dev libxml2-dev libpcre3 libpcre3-dev aptitude checkinstall gdebi " + \
     "libxslt1-dev debconf-utils bash-completion libncurses5-dev libglib2.0-dev " + \
     "python-dev python-setuptools python-software-properties ruby rubygems " + \
-    "mercurial git-core gitk subversion tmux byobu " + \
-    "libssl-dev openssh-server openssh-client openssl " + \
-    "locate htop tree chkrootkit vim strace sysstat unzip pv " + \
-    "ntp ntpdate iptables curl dnsutils iotop ncurses-term nmap "
+    "mercurial git-core gitk subversion tmux byobu libssl-dev openssh-server " + \
+    "openssh-client openssl locate htop tree chkrootkit vim strace sysstat unzip " + \
+    "pv ntp ntpdate iptables curl dnsutils iotop ncurses-term nmap "
 
 DEV_HOSTS = ('kchida@127.0.0.1:8000', )
 DEV_ROLES = ()
-DEV_APT_PKGS = COM_APT_PKGS + "sqlite3"
+DEV_APT_PKGS = COM_APT_PKGS + "sqlite3 "
 
 STAGE_HOSTS = ('ubuntu@ec2-foobar.amazonaws.com', )
 STAGE_ROLES = (None,)
 STAGE_APT_PKGS = COM_APT_PKGS + ""
 
-PROD_HOSTS = ['ubuntu@23.23.200.199', ]
-PROD_ROLES = []
+PROD_HOSTS = ('ubuntu@23.23.200.199', )
+PROD_ROLES = ()
 PROD_APT_PKGS = COM_APT_PKGS + ""
 
 SITE_SUBDIRS = ('db', 'cache', 'log', 'pid', 'sock', 'tmp', 'uploads')
@@ -97,9 +97,11 @@ env.project_name = django_settings.PROJECT_NAME                              #IN
 env.project_path = join('~', relpath(abspath(dirname(__file__)),             #INFO2
                                      start=os.environ['HOME']))
 env.site_path = dirname(env.project_path)
+
+# Python
 env.virtualenv_name = 'env_%(project_name)s' % env
 env.virtualenv_path = join(env.site_path, env.virtualenv_name)
-#TODO: shell builtins generally don't work. Figure this out
+#TODO: Figure out how to use 'source' and 'export'
 #env.virtualenv_on = 'source %s' % join(env.virtualenv_path, 'bin/activate')
 env.virtualenv_python = join(env.virtualenv_path, 'bin/python')
 env.virtualenv_pip = join(env.virtualenv_path, 'bin/pip')
@@ -281,7 +283,7 @@ def clone_project_repo():
     if env.mode in ('stage', 'prod'):
         _delete_all(env.project_path)
         with cd(env.site_path):
-            run('git clone %s' % ORIGIN_REPO)
+            run(ORIGIN_CLONE_CMD)
 
 
 def set_etc_symlink():
@@ -294,7 +296,7 @@ def set_etc_symlink():
         run('ln -s %s %s' % (join(env.etcs_path, env.mode), env.etc_path))
 
 def setup_virtualenv():
-    """Installs base Python packages that belong in /usr and/or /usr/local"""
+    """Pip-installs virtualenv into /usr/..."""
 
     if env.mode is 'dev':
         local('sudo pip install virtualenv')
