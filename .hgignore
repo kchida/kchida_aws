@@ -1,0 +1,9 @@
+# This file serves as the hgignore file for the "dot-files" repository, as well as
+# the per-user (i.e. global) ignore file, as specified in .hgrc for this repo.
+
+
+#syntax: regexp
+syntax: glob
+# Directories must be in this form 'my_dir/'
+build/
+
