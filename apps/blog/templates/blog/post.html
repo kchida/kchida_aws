@@ -1,0 +1,23 @@
+<!-- Context:         Provider:
+	 post             blog.views.show_post
+	 blog             blog.views.show_post
+	 review           blog.views.show_post 
+	 recent_posts     blog.views.show_post
+-->
+
+
+<h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+{% if not browse_posts %}
+<div class="author">
+By <strong>{{ post.author.get_full_name }}</strong> on <strong>{{ post.published_on|date }}</strong>
+<a href="{{ post.get_absolute_url }}#disqus_thread">Comments</a>
+</div>
+{% endif %}
+
+{# {% wide_social_buttons request post.title post.get_absolute_url %} #}
+
+{% if browse_posts %}
+{{ post.rendered_content|truncatewords_html:150 }}
+{% else %}
+{{ post.rendered_content }}
+{% endif %}

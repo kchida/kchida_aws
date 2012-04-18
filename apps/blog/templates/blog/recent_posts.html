@@ -1,0 +1,12 @@
+<!-- Context:              Provider:
+	 blog                  blog.markup_posts.BlogPosts
+	 recent_posts          blog.markup_posts.BlogPosts
+	 recent_posts_class    blog.markup_posts.BlogPosts
+-->
+
+
+<ul{% if recent_posts_class %} class="{{ recent_posts_class }}"{% endif %}>
+  {% for post in recent_posts %}
+    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

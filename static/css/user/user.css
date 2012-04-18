@@ -1,0 +1,152 @@
+/* line 57, icon */
+.icon-sprite, .icon-avatar, .icon-google-oauth, .icon-login, .icon-logout, .icon-settings, .icon-twitter {
+  background: url('/static/img/icon-sb0b6da65a4.png') no-repeat;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-avatar {
+  background-position: 0 0;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-google-oauth {
+  background-position: 0 -146px;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-login {
+  background-position: 0 -242px;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-logout {
+  background-position: 0 -278px;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-settings {
+  background-position: 0 -314px;
+}
+
+/* line 60, /usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-twitter {
+  background-position: 0 -350px;
+}
+
+/* line 12, ../../sass/user/user.scss */
+#user-button {
+  display: inline-block;
+}
+/* line 14, ../../sass/user/user.scss */
+#user-button a {
+  float: left;
+}
+/* line 16, ../../sass/user/user.scss */
+#user-button a img {
+  height: 26px;
+  margin-right: 5px;
+  float: left;
+}
+/* line 21, ../../sass/user/user.scss */
+#user-button a h2 {
+  float: right;
+  margin-right: 5px;
+  font-size: 10pt;
+}
+
+/* line 29, ../../sass/user/user.scss */
+#user-links {
+  display: inline-block;
+}
+/* line 32, ../../sass/user/user.scss */
+#user-links li {
+  float: left;
+  margin-right: 2px;
+}
+/* line 36, ../../sass/user/user.scss */
+#user-links .icon {
+  height: 25px;
+  width: 25px;
+}
+
+/* line 51, ../../sass/user/user.scss */
+#modal-overlay {
+  background: #ffffff;
+}
+
+/* line 55, ../../sass/user/user.scss */
+#modal-container {
+  background: #d0d0d0;
+  border: 1px solid #bbbbbb;
+  height: 50px;
+  width: 250px;
+}
+/* line 60, ../../sass/user/user.scss */
+#modal-container a#modal-close {
+  font-size: 2em;
+  text-decoration: none;
+}
+/* line 63, ../../sass/user/user.scss */
+#modal-container a#modal-close:link, #modal-container a#modal-close:visited, #modal-container a#modal-close:active {
+  color: #ff8400;
+}
+/* line 64, ../../sass/user/user.scss */
+#modal-container a#modal-close:hover {
+  color: #ff5500;
+}
+
+/* line 69, ../../sass/user/user.scss */
+#modal-close {
+  position: absolute;
+}
+
+/* line 77, ../../sass/user/user.scss */
+#util-bar #login-panel, #util-bar #register-panel {
+  display: none;
+}
+
+/* line 86, ../../sass/user/user.scss */
+#login-panel .icon {
+  height: 85px;
+  width: 85px;
+  margin: 0px 0px 0px 26px;
+  position: absolute;
+}
+/* line 92, ../../sass/user/user.scss */
+#login-panel .icon-google-oauth {
+  left: 107px;
+}
+/* line 93, ../../sass/user/user.scss */
+#login-panel .icon-shadow {
+  height: 70px;
+  width: 70px;
+  margin: 10px 1px 10px 36px;
+  float: left;
+  opacity: 0;
+  -moz-box-shadow: 0px 0px 25px 12px white;
+  -webkit-box-shadow: 0px 0px 25px 12px white;
+  -o-box-shadow: 0px 0px 25px 12px white;
+  box-shadow: 0px 0px 25px 12px white;
+}
+/* line 104, ../../sass/user/user.scss */
+#login-panel #twitter, #login-panel #google-oauth {
+  height: 0px;
+  width: 0px;
+  margin: 0 0 0 0;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url('/static/img/?1328002134');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* line 114, ../../sass/user/user.scss */
+#login-page #login-panel {
+  display: block;
+}
+
+/* line 118, ../../sass/user/user.scss */
+#register-page #register-panel {
+  display: block;
+}

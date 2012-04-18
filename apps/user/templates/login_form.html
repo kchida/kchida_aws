@@ -1,0 +1,32 @@
+<div id="login-panel" >
+  <h2 id='title'>Welcome!</h2>	
+  <h3>Social Login:</h3>
+  {% for name in social_auth.backends.oauth %}
+    <a rel="nofollow" href="{% url socialauth_begin name %}">
+      		
+      <!-- We must have an "icon-xxx" class for Compass Sprite tools --> 
+      <div id="{{ name }}-shadow" class="icon-shadow"></div>
+      <div class="icon-{{ name }} icon" ></div>
+      	  
+      <p id="{{ name }}" >
+      {{ name|title }}
+      </p>
+      	  
+    </a>
+  {% endfor %}
+  
+  <form id="login" action="/login/" method="post">{% csrf_token %}
+    <fieldset>
+      <legend><h3>Direct Login:</h3></legend>
+      {{ login_form.non_field_errors }}
+      {% for field in login_form %}
+      <p>
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}	
+      </p>
+      {% endfor %}
+    </fieldset> 
+    <input type="submit" >
+  </form> 
+</div>

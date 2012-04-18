@@ -1,0 +1,132 @@
+/* line 57, icon */
+.icon-sprite, .icon-avatar, .icon-google-oauth, .icon-login, .icon-logout, .icon-settings, .icon-twitter {
+  background: url('/static/img/icon-sb0b6da65a4.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-avatar {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-google-oauth {
+  background-position: 0 -146px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-login {
+  background-position: 0 -242px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-logout {
+  background-position: 0 -278px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-settings {
+  background-position: 0 -314px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-twitter {
+  background-position: 0 -350px;
+}
+
+/* line 13, ../sass/kchida_base.scss */
+#logo-container {
+  background: #002424 no-repeat;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  height: 110px;
+  width: 500px;
+  margin: 0px auto 5px 3%;
+  -moz-box-shadow: 4px 4px 5px #333333;
+  -webkit-box-shadow: 4px 4px 5px #333333;
+  -o-box-shadow: 4px 4px 5px #333333;
+  box-shadow: 4px 4px 5px #333333;
+}
+/* line 22, ../sass/kchida_base.scss */
+#logo-container a {
+  text-decoration: none;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.5;
+  -webkit-transition-duration: 0.5;
+  -o-transition-duration: 0.5;
+  transition-duration: 0.5;
+}
+/* line 24, ../sass/kchida_base.scss */
+#logo-container a:link, #logo-container a:visited, #logo-container a:active {
+  color: #ffffff;
+}
+/* line 28, ../sass/kchida_base.scss */
+#logo-container a:hover {
+  color: #ffffff;
+  opacity: 1.0;
+}
+
+/* line 37, ../sass/kchida_base.scss */
+#title {
+  margin: auto auto auto 20px;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 3.5em;
+  font-family: arial;
+}
+
+/* line 48, ../sass/kchida_base.scss */
+#subtitle {
+  margin: auto auto auto 110px;
+  color: #575757;
+  position: relative;
+  top: -9px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  font-family: arial;
+}
+
+/* line 61, ../sass/kchida_base.scss */
+#topbar {
+  background: #b1b1b1 no-repeat;
+  height: 40px;
+  border: 1px outset #c2c2c2;
+  margin: 10px 0px 70px 0px;
+}
+/* line 66, ../sass/kchida_base.scss */
+#topbar a {
+  text-decoration: none;
+}
+/* line 68, ../sass/kchida_base.scss */
+#topbar a:link, #topbar a:visited, #topbar a:active {
+  color: #ff8400;
+}
+/* line 69, ../sass/kchida_base.scss */
+#topbar a:hover {
+  color: #ff5500;
+}
+
+/* line 73, ../sass/kchida_base.scss */
+#search {
+  float: right;
+  margin: 4px;
+}
+
+/* line 79, ../sass/kchida_base.scss */
+#util-bar {
+  float: right;
+  margin: 2pt 0 0 0;
+}
+
+/* line 86, ../sass/kchida_base.scss */
+#main-nav {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 2.5em;
+  font-family: arial;
+}
