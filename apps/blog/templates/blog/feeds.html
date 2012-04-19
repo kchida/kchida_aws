@@ -1,0 +1,8 @@
+<!-- Context:       Provider:
+	 blogs          templatetags.blog.blog_feed
+	                templatetags.blog.blog_feeds
+-->
+
+{% for blog in blogs %}
+  <link rel="alternate" type="application/atom+xml" href="{{ blog.get_feed_url }}" title="{{ blog.title }}" />
+{% endfor %}

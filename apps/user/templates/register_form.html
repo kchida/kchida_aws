@@ -1,0 +1,17 @@
+<div id="register-panel" >
+  <h2 id='title'>Welcome!</h2>	
+  <form id="register" action="/register/" method="post">{% csrf_token %}
+    <fieldset>
+  	  <legend><h3>Register</h3></legend>
+        {{ register_form.non_field_errors }}
+        {% for field in register_form %}
+        <p>
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}	
+        </!DOCTYPE>
+        {% endfor %}
+    </fieldset> 
+  	<input type="submit" >
+  </form> 
+</div>

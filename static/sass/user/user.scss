@@ -1,0 +1,121 @@
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/typography/text/replacement";
+@import "compass/utilities/sprites";
+
+// Sprite setup. Each sprite must have 6px of clear on each side.
+$icon-spacing: 6px;
+@import "icon/*.png";
+@include all-icon-sprites;
+
+#user-button {
+    display: inline-block;
+    a {
+        float: left;
+        img {
+            height: 26px;
+            margin-right: 5px;
+            float: left;
+        }
+        h2 {
+            float: right;
+            margin-right: 5px;
+            font-size: 10pt;
+        }
+    }
+}
+
+#user-links {
+    //float: right;
+    display: inline-block;
+    li {
+        float: left;  //temporary fix for jqueryUI icons
+        margin-right: 2px;
+    }
+    .icon {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+//#util-modal {
+//    display: none;
+    //position: fixed;
+    //top: 150px;
+    //left: 20%;
+//    border: 1px solid #dddddd;
+//}
+
+// Modal Section////////
+#modal-overlay {
+    background: #ffffff;
+}
+
+#modal-container {
+    background: #d0d0d0;
+    border: 1px solid #bbbbbb;
+    height: 50px;
+    width: 250px;
+    a#modal-close {
+        font-size: 2em;
+        text-decoration: none;
+        &:link, &:visited, &:active {color: #ff8400}
+        &:hover {color: #ff5500}
+    }
+    //.simplemodal-wrap { overflow: hidden; }
+}
+
+#modal-close {
+    position: absolute;
+}
+// End Modal Section ////
+
+// Start Login and Register Section.
+#util-bar {
+    // This is for modal window; do not show. For non-JS static page, we want to show.
+    #login-panel, #register-panel {
+        display: none;
+    }
+}
+
+#login-panel, #register-panel {
+}
+
+#login-panel {
+    .icon {
+        height: 85px;
+        width: 85px;
+        margin: 0px 0px 0px 26px;
+        position: absolute;
+    }
+    .icon-google-oauth { left: 107px;}
+    .icon-shadow {
+        height: 70px;
+        width: 70px;
+        margin: 10px 1px 10px 36px;
+        float: left;
+        opacity: 0;
+        //top: 10px;
+        //left: 10px;
+        @include single-box-shadow(#ffffff, 0px, 0px, 25px, 12px);
+    }
+    // Text replace for icons
+    #twitter, #google-oauth {
+        height: 0px;
+        width: 0px;
+        margin: 0 0 0 0;
+        @include replace-text('');
+    }
+}
+
+// Start no-JS Login
+
+#login-page #login-panel {
+    display: block;
+}
+
+#register-page #register-panel {
+    display: block;
+}
+// End no-JS Login

@@ -1,0 +1,34 @@
+$grid-gutter-width: 22px !default
+$grid-width: 800px !default
+$grid-columns: 16 !default
+
+=grid-container
+  margin-left: auto
+  margin-right: auto
+  width: $grid-width
+
+=grid-width($n, $cols: $grid-columns, $gutter-width: $grid-gutter-width, $leftmost: false, $rightmost: false)
+  $extra: 0
+  @if $leftmost and $rightmost
+    $extra: $gutter_width
+  @else if $leftmost or $rightmost
+    $extra: $gutter_width / 2
+  width: $grid-width / $cols * $n - $gutter-width + $extra
+
+=grid-unit-base($gutter-width: $grid-gutter-width, $leftmost: false, $rightmost: false)
+  display: inline
+  float: left
+
+  @if $leftmost
+    margin-left: 0
+  @else
+    margin-left: $gutter-width / 2
+
+  @if $rightmost
+    margin-right: 0
+  @else
+    margin-right: $gutter-width / 2
+
+=grid($n, $cols: $grid-columns, $gutter-width: $grid-gutter-width, $leftmost: false, $rightmost: false)
+  +grid-unit-base($gutter-width, $leftmost, $rightmost)
+  +grid-width($n, $cols, $gutter-width, $leftmost, $rightmost)

@@ -1,0 +1,122 @@
+
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/typography/text/replacement";
+@import "compass/utilities/sprites";
+
+// Sprite setup. Each sprite must have 6px of clear on each side.
+$icon-spacing: 6px;
+@import "icon/*.png";
+@include all-icon-sprites;
+
+
+#logo-container {
+    background: black no-repeat;
+    opacity: 0.7;
+    position: absolute;
+    top: 0px;
+    height: 110px;
+    width: 500px;
+    //border: 2px outset #999999;
+    margin: 0px auto 5px 3%;
+    a {
+        text-decoration: none;
+        &:link, &:visited, &:active {
+            color: #ffffff;
+            //opacity: 1.0;
+        }
+        &:hover {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+        @include single-transition(color, 0.5);
+    }
+    @include single-box-shadow(#111111, 4px, 3px, 10px);
+}
+
+#title {
+    margin: 10px auto auto 55px;
+    color: #ffffff;
+    font: {
+        style: normal;
+        weight: lighter;
+        size: 3.5em;
+        family: arial;
+    }
+    //@include single-text-shadow(#FCCC2D, 2px, 2px, 4px);
+}
+
+#subtitle {
+    margin: 3px auto auto 275px;
+    color: #999999;
+    position: relative;
+    //top: -5px;
+    font: {
+        style: normal;
+        weight: normal;
+        size: 1.2em;
+        family: arial;
+    }
+}
+
+#topbar {
+    background: #777777 no-repeat;
+    height: 44px;
+    //border: 1px outset #c2c2c2;
+    margin: 15px 0px 70px 0px;
+    a {
+        text-decoration: none;
+        &:link, &:visited, &:active {color: #ff8400}
+        &:hover {color: #ff5500}
+    }
+}
+
+#search {
+    //width: 210px;
+    float: right;
+    margin: 4px;
+}
+
+#util-bar {
+    //width: 190px;
+    float: right;
+    margin: 2pt 0 0 0;
+}
+
+#main-wrapper {
+  padding: 0 10px 0 110px;
+}
+
+//Start Main Nav
+#main-nav {
+    font: {
+        style: normal;
+        weight: lighter;
+        size: 2.0em;
+        family: arial;
+    }
+    li {
+      display: inline-block;
+      background: #d1d1d1;
+      width: 225px;
+      margin: 20px 15px 20px 10px;
+      text-align: center;
+    }
+    a {
+      display: block;
+      padding: 20px 0 20px 0;
+      color: #ffffff;
+      text-decoration: none;
+      .cursor {
+        opacity: 0;
+        display: inline-block;
+        height: 0.9em;
+        width: 0.5em;
+        background: #dddddd;
+        vertical-align: bottom;
+        margin-bottom: 5px;
+      }
+    }
+    
+}
